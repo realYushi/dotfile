@@ -89,7 +89,7 @@
       "anki"
       "bluesnooze"
       "cleanshot"
-      "beeper"
+      "rambox"
     ];
   };
 }
