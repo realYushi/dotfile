@@ -53,6 +53,7 @@
       Endel=1346247457;
       Word=462054704;
       Yoink=457622435;
+      nextDns=1464122853;
     };
 
     taps = [
@@ -89,7 +90,7 @@
       "anki"
       "bluesnooze"
       "cleanshot"
-      "rambox"
+      "ferdium"
     ];
   };
 }
