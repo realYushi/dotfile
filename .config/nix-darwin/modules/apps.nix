@@ -98,6 +98,7 @@
       "ferdium"
       "HazeOver"
       "windsurf"
+      "zoom"
     ];
   };
 }
