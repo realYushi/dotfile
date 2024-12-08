@@ -1,0 +1,7 @@
+[user]
+	name = Yushi Cui
+	email = realYushi@gmail.com
+[init]
+    defaultBranch = master	
+[color]
+	ui = true
