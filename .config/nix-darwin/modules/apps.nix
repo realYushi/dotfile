@@ -7,7 +7,6 @@
   #  NOTE: Your can find all available options in:
   #    https://daiderd.com/nix-darwin/manual/index.html
   #
-  # TODO Fell free to modify this file to fit your needs.
   #
   ##########################################################################
 
@@ -35,6 +34,12 @@
     yazi
     thefuck
     opencommit
+    eza
+    bat
+    fd
+    trash-cli
+    ripgrep
+
 
   ];
   environment.variables.EDITOR = "nvim";
@@ -91,6 +96,8 @@
       "bluesnooze"
       "cleanshot"
       "ferdium"
+      "HazeOver"
+      "windsurf"
     ];
   };
 }
