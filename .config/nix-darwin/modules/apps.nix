@@ -33,12 +33,12 @@
     nix-direnv
     yazi
     thefuck
-    opencommit
     eza
     bat
     fd
     trash-cli
     ripgrep
+    opencommit
 
 
   ];
