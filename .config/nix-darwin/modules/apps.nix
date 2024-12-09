@@ -17,20 +17,12 @@
   #
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   environment.systemPackages = with pkgs; [
-    nodejs_23
-    zulu23
-    dotnet-sdk
-    python3
-
-
     neovim
     git
     stow
     tldr
     fzf
     zoxide
-    direnv
-    nix-direnv
     yazi
     thefuck
     eza
@@ -38,9 +30,7 @@
     fd
     trash-cli
     ripgrep
-    opencommit
-
-
+    ffmpeg
   ];
   environment.variables.EDITOR = "nvim";
   # The apps installed by homebrew are not managed by nix, and not reproducible!
@@ -59,6 +49,7 @@
       Word=462054704;
       Yoink=457622435;
       nextDns=1464122853;
+      snippetsLab=1006087419;
     };
 
     taps = [
@@ -69,6 +60,7 @@
     # TODO Feel free to add your favorite apps here.
     brews = [
       "antidote"
+      "mise"
     ];
 
     # `brew install --cask`
@@ -98,7 +90,6 @@
       "ferdium"
       "HazeOver"
       "windsurf"
-      "zoom"
     ];
   };
 }
