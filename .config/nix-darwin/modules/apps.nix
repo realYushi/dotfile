@@ -68,10 +68,8 @@
     casks = [
       "google-chrome"
       "visual-studio-code"
-      "chatgpt"
       "iterm2"
       "raycast"
-      "spotify"
       "obsidian"
       "1password"
       "karabiner-elements"
@@ -89,7 +87,9 @@
       "cleanshot"
       "ferdium"
       "HazeOver"
+      "chatgpt"
       "windsurf"
+      "boltai"
     ];
   };
 }
