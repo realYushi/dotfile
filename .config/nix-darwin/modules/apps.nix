@@ -31,7 +31,9 @@
     trash-cli
     ripgrep
     ffmpeg
+    lazygit  
   ];
+
   environment.variables.EDITOR = "nvim";
   # The apps installed by homebrew are not managed by nix, and not reproducible!
   # But on macOS, homebrew has a much larger selection of apps than nixpkgs, especially for GUI apps!

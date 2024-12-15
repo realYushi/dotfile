@@ -1,18 +1,11 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
+autoload -Uz compinit
+compinit
 # Load Antidote for plugin management
 source "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
 
 # Initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 antidote load
 
-# Load Powerlevel10k configuration
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # Environment variables
 export FZF_CTRL_T_OPTS="
@@ -21,6 +14,15 @@ export FZF_CTRL_T_OPTS="
   --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 export FZF_DEFAULT_COMMAND='fd --type file '
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS=" \
+--height 40% --tmux bottom,40% --layout reverse --border top \
+--color=bg+:#ccd0da,bg:#eff1f5,spinner:#dc8a78,hl:#d20f39 \
+--color=fg:#4c4f69,header:#d20f39,info:#8839ef,pointer:#dc8a78 \
+--color=marker:#7287fd,fg+:#4c4f69,prompt:#8839ef,hl+:#d20f39 \
+--color=selected-bg:#bcc0cc \
+--multi"
+export EZA_CONFIG_DIR="~/.config/eza"
+export BAT_THEME="Catppuccin Latte"
 # Aliases
 alias ls='eza -alh --icons --group-directories-first'
 alias cat="bat --theme=$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
@@ -34,13 +36,13 @@ y() {
   fi
   rm -f -- "$tmp"
 }
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # Source additional scripts
 source <(fzf --zsh)
 # Initialize tools
 eval "$(zoxide init zsh)"
-eval "$(direnv hook zsh)"
 eval "$(thefuck --alias)"
-
-# Added by Windsurf
+eval "$(/opt/homebrew/bin/mise activate zsh)" 
+eval "$(starship init zsh)"
 export PATH="/Users/yushi/.codeium/windsurf/bin:$PATH"

@@ -1,5 +1,5 @@
 # Less confusing to start with tiles then to start with accordion when there are a lot of windows
-start-at-login = false
+start-at-login = true 
 default-root-container-layout = 'tiles'
 # Possible values: horizontal|vertical|auto
 # 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
@@ -13,13 +13,13 @@ key-mapping.preset = 'qwerty'
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 8
+accordion-padding = 10
 
 # Mouse follows focus when focused monitor changes
 # Drop it from your config, if you don't like this behavior
 # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
-on-focused-monitor-changed = ['move-mouse window-lazy-center']
+#on-focused-monitor-changed = ['move-mouse window-lazy-center']
 # on-focus-changed = ['move-mouse window-force-center']
 automatically-unhide-macos-hidden-apps = false
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
@@ -30,8 +30,8 @@ automatically-unhide-macos-hidden-apps = false
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 0
-inner.vertical =   0
+inner.horizontal = 5
+inner.vertical =   5
 outer.left =       0
 outer.bottom =     0
 outer.top =        0
@@ -72,7 +72,7 @@ f19 = ['mode alt']
 # ctrl-alt-cmd-p = ['focus-monitor prev', 'move-mouse window-force-center']
 # ctrl-alt-cmd-n = ['focus-monitor next', 'move-mouse window-force-center']
 [mode.spacial.binding]
-esc = 'mode alt'
+f19='mode main'
 space ='mode main'
 h = ['join-with left', 'mode alt']
 j = ['join-with down', 'mode alt']
@@ -81,7 +81,7 @@ l = ['join-with right', 'mode alt']
 
 [mode.alt.binding]
 space = ['mode spacial']
-esc = ['mode main']
+f19 = ['mode main']
 backtick = ['reload-config', 'mode main']
 
 # You can uncomment this line to open up terminal with alt + enter shortcut
@@ -109,10 +109,10 @@ n = ['focus-monitor next', 'move-mouse window-force-center']
 c = ['move-mouse window-force-center']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-q = 'workspace 📥'  # Inbox
-w = 'workspace 🌐'  # Browser
-e = 'workspace 🎯'  # Focus Job
-r = 'workspace 🌀'  # Non-Focus Job
+q = 'summon-workspace 📥'  # Inbox
+w = 'summon-workspace 🌐'  # Browser
+e = 'summon-workspace 🎯'  # Focus Job
+r = 'summon-workspace 🌀'  # Non-Focus Job
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
@@ -167,11 +167,7 @@ f = ['layout floating']
 t = ['layout tiling']
 
 
-[workspace-to-monitor-force-assignment]
-'🌐'= 1
-'🎯' = 2
-'📥' = 2
-'🌀' = 2
+
 #
 # Application-specific configurations
 #
