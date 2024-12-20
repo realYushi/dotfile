@@ -41,8 +41,13 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 # Source additional scripts
 source <(fzf --zsh)
 # Initialize tools
+POSH_THEMES_PATH=$(brew --prefix oh-my-posh)/themes
+eval "$(oh-my-posh completion zsh)"
 eval "$(zoxide init zsh)"
 eval "$(thefuck --alias)"
 eval "$(/opt/homebrew/bin/mise activate zsh)" 
-eval "$(starship init zsh)"
-export PATH="/Users/yushi/.codeium/windsurf/bin:$PATH"
+
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh-theme.json)"
+
+
+. "$HOME/.local/bin/env"
