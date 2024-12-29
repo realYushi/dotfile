@@ -1,0 +1,8 @@
+font-family = "FiraCode Nerd Font Mono"
+font-size = 16
+theme = catppuccin-latte
+quick-terminal-screen=mouse
+macos-option-as-alt=true
+macos-titlebar-style=hidden
+macos-window-shadow=false
+
