@@ -1,26 +1,26 @@
 # Less confusing to start with tiles then to start with accordion when there are a lot of windows
-start-at-login = true 
+start-at-login = true
 after-startup-command = [
   'exec-and-forget borders active_color=0xffdd7878 inactive_color=0xff7287fd width=8.0 style=square',
 ]
-on-focused-monitor-changed = ['move-mouse window-lazy-center','mode main']
-automatically-unhide-macos-hidden-apps = true 
+on-focused-monitor-changed = ['move-mouse window-lazy-center', 'mode main']
+automatically-unhide-macos-hidden-apps = true
 default-root-container-layout = 'accordion'
 [gaps]
-inner.horizontal =10 
-inner.vertical =  10 
-outer.left =      5
-outer.bottom =    5 
-outer.top =       5
-outer.right =     5
+inner.horizontal = 10
+inner.vertical = 10
+outer.left = 5
+outer.bottom = 5
+outer.top = 5
+outer.right = 5
 
 [mode.main.binding]
 f19 = ['mode alt']
-cmd-h = [] 
+cmd-h = []
 cmd-alt-h = []
 [mode.spacial.binding]
-space ='mode main'
-r=  ['flatten-workspace-tree', 'mode alt']
+space = 'mode main'
+r = ['flatten-workspace-tree', 'mode alt']
 h = ['join-with left', 'mode alt']
 j = ['join-with down', 'mode alt']
 k = ['join-with up', 'mode alt']
@@ -32,27 +32,28 @@ space = ['mode spacial']
 f19 = ['mode main']
 backspace = ['reload-config', 'mode main']
 
-slash = ['layout horizontal vertical','mode main']
-quote = ['layout tiles accordion','mode main']
+slash = ['layout horizontal vertical', 'mode main']
+quote = ['layout tiles accordion', 'mode main']
 
 #
 # Navigation
 #
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-h = ['focus --ignore-floating --boundaries all-monitors-outer-frame left']
-j = ['focus --ignore-floating --boundaries all-monitors-outer-frame down ']
-k = ['focus --ignore-floating --boundaries all-monitors-outer-frame up']
-l = ['focus --ignore-floating --boundaries all-monitors-outer-frame right']
+h = ['focus --boundaries all-monitors-outer-frame left']
+j = ['focus --boundaries all-monitors-outer-frame down ']
+k = ['focus --boundaries all-monitors-outer-frame up']
+l = ['focus --boundaries all-monitors-outer-frame right']
 
 n = ['focus-monitor --wrap-around next', 'mode main']
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-a = ['summon-workspace 📥', 'mode main']  # Inbox
-s = ['summon-workspace 🌐', 'mode main' ]  # Browser
-d = ['summon-workspace 🎯', 'mode main']  # Focus Job
-f = ['summon-workspace 🌀', 'mode main']  # Non-Focus Job
+a = ['summon-workspace 📥', 'mode main'] # Inbox
+s = ['summon-workspace 🌐', 'mode main'] # Browser
+d = ['summon-workspace 🎯', 'mode main'] # Focus Job
+f = ['summon-workspace 🌀', 'mode main'] # Non-Focus Job
+g = ['summon-workspace 😺', 'mode main'] # Entertainment
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
@@ -69,13 +70,12 @@ shift-k = 'move up'
 shift-l = 'move right'
 
 
-
-
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 shift-a = 'move-node-to-workspace 📥'
 shift-s = 'move-node-to-workspace 🌐'
 shift-d = 'move-node-to-workspace 🎯'
 shift-f = 'move-node-to-workspace 🌀'
+shift-g = 'move-node-to-workspace 😺'
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
@@ -105,31 +105,33 @@ t = ['layout tiling floating', 'mode main']
 #
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
-run = ['layout tiling','move-node-to-workspace 🌐']
-
+run = ['layout tiling', 'move-node-to-workspace 🌐']
 [[on-window-detected]]
-if.app-id = 'com.apple.mail'
-run = ['layout tiling','move-node-to-workspace 🌀']
+if.app-id = 'com.apple.Safari'
+run = ['layout tiling', 'move-node-to-workspace 🌐']
+[[on-window-detected]]
+if.app-id = 'com.kagi.kagimacOS'
+run = ['layout tiling', 'move-node-to-workspace 🌀']
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
-run = ['layout tiling','move-node-to-workspace 🌀']
+run = ['layout tiling', 'move-node-to-workspace 🌀']
 [[on-window-detected]]
 if.app-id = 'is.follow'
-run = ['layout tiling','move-node-to-workspace 🌀']
+run = ['layout tiling', 'move-node-to-workspace 🌀']
 [[on-window-detected]]
 if.app-id = 'org.ferdium.ferdium-app'
-run = ['layout tiling','move-node-to-workspace 🌀']
+run = ['layout tiling', 'move-node-to-workspace 🌀']
 
-
+#
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
-run = ['layout tiling','move-node-to-workspace 🎯']
+run = ['layout tiling', 'move-node-to-workspace 🎯']
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
-run = ['layout tiling','move-node-to-workspace 🎯']
+run = ['layout tiling', 'move-node-to-workspace 🎯']
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
-run = ['layout tiling','move-node-to-workspace 🎯']
+run = ['layout tiling', 'move-node-to-workspace 🎯']
 
 [[on-window-detected]]
 check-further-callbacks = true

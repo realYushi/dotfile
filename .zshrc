@@ -71,7 +71,10 @@ y() {
   fi
   rm -f -- "$tmp"
 }
-
+function _mommy_random() {
+  [ $(( RANDOM % 100 )) -lt 30 ] && mommy -1 -s $? 
+}
+precmd() { _mommy_random $? }
 #
 # ZSH Completion Configuration
 #

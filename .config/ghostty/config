@@ -1,5 +1,10 @@
-font-family = "FiraCode Nerd Font Mono"
-font-size = 16
+font-family = JetBrainsMono Nerd Font Monodd
+font-size = 18
+# font-size = 26
+font-style-bold = false
+font-style-bold-italic = false
+font-style-italic = false
+font-synthetic-style = false
 theme = catppuccin-latte
 quick-terminal-screen=mouse
 macos-option-as-alt=true
