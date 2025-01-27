@@ -1,11 +1,13 @@
 # Less confusing to start with tiles then to start with accordion when there are a lot of windows
 start-at-login = true
 after-startup-command = [
-  'exec-and-forget borders active_color=0xffdd7878 inactive_color=0xff7287fd width=8.0 style=square',
+  'exec-and-forget borders active_color=0xffdd7878 inactive_color=0xff7287fd width=11.0 style=square',
+
 ]
-on-focused-monitor-changed = ['move-mouse window-lazy-center', 'mode main']
-automatically-unhide-macos-hidden-apps = true
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
 default-root-container-layout = 'accordion'
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 [gaps]
 inner.horizontal = 10
 inner.vertical = 10
@@ -18,13 +20,20 @@ outer.right = 5
 f19 = ['mode alt']
 cmd-h = []
 cmd-alt-h = []
+
+cmd-alt-ctrl-shift-tab = ['workspace-back-and-forth']
+cmd-alt-ctrl-shift-right = ['focus --ignore-floating  --boundaries-action wrap-around-the-workspace right']
+cmd-alt-ctrl-shift-left = ['focus --ignore-floating  --boundaries-action wrap-around-the-workspace left']
+cmd-alt-ctrl-shift-up= ['summon-workspace S']
+cmd-alt-ctrl-shift-down= ['summon-workspace D']
+
 [mode.spacial.binding]
 space = 'mode main'
-r = ['flatten-workspace-tree', 'mode alt']
-h = ['join-with left', 'mode alt']
-j = ['join-with down', 'mode alt']
-k = ['join-with up', 'mode alt']
-l = ['join-with right', 'mode alt']
+r = ['flatten-workspace-tree', 'mode main']
+h = ['join-with left', 'mode main']
+j = ['join-with down', 'mode main']
+k = ['join-with up', 'mode main']
+l = ['join-with right', 'mode main']
 
 [mode.alt.binding]
 
@@ -40,20 +49,20 @@ quote = ['layout tiles accordion', 'mode main']
 #
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-h = ['focus --boundaries all-monitors-outer-frame left']
-j = ['focus --boundaries all-monitors-outer-frame down ']
-k = ['focus --boundaries all-monitors-outer-frame up']
-l = ['focus --boundaries all-monitors-outer-frame right']
+h = ['focus --boundaries all-monitors-outer-frame left','mode main']
+j = ['focus --boundaries all-monitors-outer-frame down ','mode main']
+k = ['focus --boundaries all-monitors-outer-frame up','mode main']
+l = ['focus --boundaries all-monitors-outer-frame right','mode main']
 
 n = ['focus-monitor --wrap-around next', 'mode main']
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-a = ['summon-workspace 📥', 'mode main'] # Inbox
-s = ['summon-workspace 🌐', 'mode main'] # Browser
-d = ['summon-workspace 🎯', 'mode main'] # Focus Job
-f = ['summon-workspace 🌀', 'mode main'] # Non-Focus Job
-g = ['summon-workspace 😺', 'mode main'] # Entertainment
+a = ['summon-workspace A', 'mode main'] # Inbox
+s = ['summon-workspace S', 'mode main'] # Browser
+d = ['summon-workspace D', 'mode main'] # Focus Job
+f = ['summon-workspace F', 'mode main'] # Non-Focus Job
+g = ['summon-workspace G', 'mode main'] # Entertainment
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
@@ -64,22 +73,20 @@ tab = ['workspace-back-and-forth', 'mode main']
 #;
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
-shift-h = 'move left'
-shift-j = 'move down'
-shift-k = 'move up'
-shift-l = 'move right'
+shift-h = ['move left','mode main']
+shift-j = ['move down','mode main']
+shift-k = ['move up','mode main']
+shift-l = ['move right','mode main']
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-shift-a = 'move-node-to-workspace 📥'
-shift-s = 'move-node-to-workspace 🌐'
-shift-d = 'move-node-to-workspace 🎯'
-shift-f = 'move-node-to-workspace 🌀'
-shift-g = 'move-node-to-workspace 😺'
+shift-a = ['move-node-to-workspace A','mode main']
+shift-s = ['move-node-to-workspace S','mode main']
+shift-d = ['move-node-to-workspace D','mode main']
+shift-f = ['move-node-to-workspace F','mode main']
+shift-g = ['move-node-to-workspace G','mode main']
 
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-shift-tab = 'move-workspace-to-monitor --wrap-around  next'
 
 #
 # Resizing
@@ -94,44 +101,62 @@ shift-equal = 'resize smart +128'
 #
 # Other
 #
-
 # Toggle Maximize window
 
 # Float window
 t = ['layout tiling floating', 'mode main']
 # Tile window
+[workspace-to-monitor-force-assignment]
+G=3
 
+A=1
+
+F=2
 
 #
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
-run = ['layout tiling', 'move-node-to-workspace 🌐']
+run = ['layout tiling', 'move-node-to-workspace S']
+
+
+
 [[on-window-detected]]
-if.app-id = 'com.apple.Safari'
-run = ['layout tiling', 'move-node-to-workspace 🌐']
+if.app-id = 'com.apple.mail'
+run = [ 'move-node-to-workspace F']
 [[on-window-detected]]
-if.app-id = 'com.kagi.kagimacOS'
-run = ['layout tiling', 'move-node-to-workspace 🌀']
-[[on-window-detected]]
-if.app-id = 'com.spotify.client'
-run = ['layout tiling', 'move-node-to-workspace 🌀']
+if.app-id = 'com.apple.iCal'
+run = [ 'move-node-to-workspace F']
+
 [[on-window-detected]]
 if.app-id = 'is.follow'
-run = ['layout tiling', 'move-node-to-workspace 🌀']
+run = [ 'move-node-to-workspace G']
 [[on-window-detected]]
-if.app-id = 'org.ferdium.ferdium-app'
-run = ['layout tiling', 'move-node-to-workspace 🌀']
+if.app-id = 'com.spotify.client'
+run = [ 'move-node-to-workspace G']
+[[on-window-detected]]
+if.app-id = 'com.tencent.xinWeChat'
+run = [ 'move-node-to-workspace G']
+[[on-window-detected]]
+if.app-id = 'com.apple.stocks'
+run = [ 'move-node-to-workspace G']
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = [ 'move-node-to-workspace G']
 
-#
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
-run = ['layout tiling', 'move-node-to-workspace 🎯']
+run = ['layout tiling', 'move-node-to-workspace D']
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
-run = ['layout tiling', 'move-node-to-workspace 🎯']
+run = ['layout tiling', 'move-node-to-workspace D']
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
-run = ['layout tiling', 'move-node-to-workspace 🎯']
+run = ['layout tiling', 'move-node-to-workspace D']
+[[on-window-detected]]
+if.app-id = 'dev.zed.Zed'
+run = ['layout tiling', 'move-node-to-workspace D']
+
+
 
 [[on-window-detected]]
 check-further-callbacks = true

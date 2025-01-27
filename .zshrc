@@ -58,7 +58,7 @@ alias ls='eza -alh --icons --group-directories-first'
 alias cat="bat --theme=$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
 # Safety aliases
 alias rm='echo "use trash-put"; false'
-
+alias aider="aider --architect --model openrouter/deepseek/deepseek-r1 --editor-model openrouter/anthropic/claude-3.5-sonnet"
 #
 # Custom Functions
 #
@@ -88,6 +88,29 @@ eval "$(zoxide init zsh --cmd cd)"
 eval "$(/opt/homebrew/bin/mise activate zsh)"
 export PATH="$HOME/.local/bin:$PATH"
 export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins/"
-eval "$(pay-respects zsh --alias --nocnf)"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/yushi/.lmstudio/bin"
+
+export PATH="$PATH:/Applications/screenpipe.app/Contents/MacOS"
+
+# bun completions
+[ -s "/Users/yushi/.bun/_bun" ] && source "/Users/yushi/.bun/_bun"
