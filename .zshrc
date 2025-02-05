@@ -58,7 +58,7 @@ alias ls='eza -alh --icons --group-directories-first'
 alias cat="bat --theme=$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
 # Safety aliases
 alias rm='echo "use trash-put"; false'
-alias aider="aider --architect --model openrouter/deepseek/deepseek-r1 --editor-model openrouter/anthropic/claude-3.5-sonnet"
+alias aider="aider --architect --model openrouter/deepseek/deepseek-r1 --editor-model openrouter/deepseek/deepseek-chat"
 #
 # Custom Functions
 #
@@ -84,6 +84,7 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 # Tool Initializations
 #
 source <(fzf --zsh)
+eval "$(pay-respects zsh --alias)"
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(/opt/homebrew/bin/mise activate zsh)"
 export PATH="$HOME/.local/bin:$PATH"

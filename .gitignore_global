@@ -206,3 +206,6 @@ $RECYCLE.BIN/
 .env
 .idea
 repomix-*
+
+#cursor
+.cursorrules

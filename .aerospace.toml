@@ -2,7 +2,6 @@
 start-at-login = true
 after-startup-command = [
   'exec-and-forget borders active_color=0xffdd7878 inactive_color=0xff7287fd width=11.0 style=square',
-
 ]
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
@@ -17,52 +16,69 @@ outer.top = 5
 outer.right = 5
 
 [mode.main.binding]
-f19 = ['mode alt']
+cmd-alt-ctrl-shift-f19 = ['mode spacial']
 cmd-h = []
 cmd-alt-h = []
 
 cmd-alt-ctrl-shift-tab = ['workspace-back-and-forth']
-cmd-alt-ctrl-shift-right = ['focus --ignore-floating  --boundaries-action wrap-around-the-workspace right']
-cmd-alt-ctrl-shift-left = ['focus --ignore-floating  --boundaries-action wrap-around-the-workspace left']
-cmd-alt-ctrl-shift-up= ['summon-workspace S']
-cmd-alt-ctrl-shift-down= ['summon-workspace D']
+cmd-alt-ctrl-shift-right = [
+  'focus --ignore-floating  --boundaries-action wrap-around-the-workspace right',
+]
+cmd-alt-ctrl-shift-left = [
+  'focus --ignore-floating  --boundaries-action wrap-around-the-workspace left',
+]
+cmd-alt-ctrl-shift-up = ['summon-workspace S']
+cmd-alt-ctrl-shift-down = ['summon-workspace D']
 
+cmd-alt-ctrl-shift-a = ['summon-workspace A'] # Inbox
+cmd-alt-ctrl-shift-s = ['summon-workspace S'] # Browser
+cmd-alt-ctrl-shift-d = ['summon-workspace D'] # Focus Job
+cmd-alt-ctrl-shift-f = ['summon-workspace F'] # Non-Focus Job
+cmd-alt-ctrl-shift-g = ['summon-workspace G'] # Entertainment
+
+cmd-alt-ctrl-shift-h = ['focus --boundaries all-monitors-outer-frame left']
+cmd-alt-ctrl-shift-j = ['focus --boundaries all-monitors-outer-frame down']
+cmd-alt-ctrl-shift-k = ['focus --boundaries all-monitors-outer-frame up']
+cmd-alt-ctrl-shift-l = ['focus --boundaries all-monitors-outer-frame right']
+
+cmd-alt-ctrl-shift-slash = ['layout horizontal vertical']
+cmd-alt-ctrl-shift-quote = ['layout tiles accordion']
+cmd-alt-ctrl-shift-n = ['focus-monitor --wrap-around next']
+cmd-alt-ctrl-shift-t = ['layout tiling floating']
 [mode.spacial.binding]
-space = 'mode main'
+esc = 'mode main'
+backspace = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main']
 h = ['join-with left', 'mode main']
 j = ['join-with down', 'mode main']
 k = ['join-with up', 'mode main']
 l = ['join-with right', 'mode main']
 
-[mode.alt.binding]
+shift-h = ['move left', 'mode main']
+shift-j = ['move down', 'mode main']
+shift-k = ['move up', 'mode main']
+shift-l = ['move right', 'mode main']
 
-space = ['mode spacial']
-f19 = ['mode main']
-backspace = ['reload-config', 'mode main']
+shift-a = ['move-node-to-workspace A', 'mode main']
+shift-s = ['move-node-to-workspace S', 'mode main']
+shift-d = ['move-node-to-workspace D', 'mode main']
+shift-f = ['move-node-to-workspace F', 'mode main']
+shift-g = ['move-node-to-workspace G', 'mode main']
 
-slash = ['layout horizontal vertical', 'mode main']
-quote = ['layout tiles accordion', 'mode main']
+minus = 'resize smart -64'
+equal = 'resize smart +64'
+shift-minus = 'resize smart -128'
+shift-equal = 'resize smart +128'
+
 
 #
 # Navigation
 #
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-h = ['focus --boundaries all-monitors-outer-frame left','mode main']
-j = ['focus --boundaries all-monitors-outer-frame down ','mode main']
-k = ['focus --boundaries all-monitors-outer-frame up','mode main']
-l = ['focus --boundaries all-monitors-outer-frame right','mode main']
-
-n = ['focus-monitor --wrap-around next', 'mode main']
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-a = ['summon-workspace A', 'mode main'] # Inbox
-s = ['summon-workspace S', 'mode main'] # Browser
-d = ['summon-workspace D', 'mode main'] # Focus Job
-f = ['summon-workspace F', 'mode main'] # Non-Focus Job
-g = ['summon-workspace G', 'mode main'] # Entertainment
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
@@ -72,76 +88,58 @@ tab = ['workspace-back-and-forth', 'mode main']
 # Moving
 #;
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#move
-shift-h = ['move left','mode main']
-shift-j = ['move down','mode main']
-shift-k = ['move up','mode main']
-shift-l = ['move right','mode main']
-
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-shift-a = ['move-node-to-workspace A','mode main']
-shift-s = ['move-node-to-workspace S','mode main']
-shift-d = ['move-node-to-workspace D','mode main']
-shift-f = ['move-node-to-workspace F','mode main']
-shift-g = ['move-node-to-workspace G','mode main']
-
-
 
 #
 # Resizing
 #
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-minus = 'resize smart -64'
-equal = 'resize smart +64'
-shift-minus = 'resize smart -128'
-shift-equal = 'resize smart +128'
-
 #
 # Other
 #
 # Toggle Maximize window
 
 # Float window
-t = ['layout tiling floating', 'mode main']
+
 # Tile window
 [workspace-to-monitor-force-assignment]
-G=3
+G = 3
 
-A=1
+A = 1
 
-F=2
+F = 2
 
 #
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = ['layout tiling', 'move-node-to-workspace S']
-
-
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = ['layout tiling', 'move-node-to-workspace S']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.mail'
-run = [ 'move-node-to-workspace F']
+run = ['move-node-to-workspace F']
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'
-run = [ 'move-node-to-workspace F']
+run = ['move-node-to-workspace F']
 
 [[on-window-detected]]
 if.app-id = 'is.follow'
-run = [ 'move-node-to-workspace G']
+run = ['move-node-to-workspace G']
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
-run = [ 'move-node-to-workspace G']
+run = ['move-node-to-workspace G']
 [[on-window-detected]]
 if.app-id = 'com.tencent.xinWeChat'
-run = [ 'move-node-to-workspace G']
+run = ['move-node-to-workspace G']
 [[on-window-detected]]
 if.app-id = 'com.apple.stocks'
-run = [ 'move-node-to-workspace G']
+run = ['move-node-to-workspace G']
 [[on-window-detected]]
-if.app-id = 'com.apple.Safari'
-run = [ 'move-node-to-workspace G']
+if.app-name-regex-substring = 'Spotify'
+run = ['layout floating', 'move-node-to-workspace G']
+
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
@@ -155,7 +153,9 @@ run = ['layout tiling', 'move-node-to-workspace D']
 [[on-window-detected]]
 if.app-id = 'dev.zed.Zed'
 run = ['layout tiling', 'move-node-to-workspace D']
-
+[[on-window-detected]]
+if.app-name-regex-substring = 'Cursor'
+run = ['layout tiling', 'move-node-to-workspace D']
 
 
 [[on-window-detected]]
