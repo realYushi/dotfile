@@ -1,0 +1,65 @@
+selectedProfileId: 925A4807-AA0C-46A1-8213-A08782DE3445
+profiles:
+- id: 925A4807-AA0C-46A1-8213-A08782DE3445
+  name: Default
+  workspaces:
+  - id: 678B1EF0-1054-474D-BBAE-2A0F2BEA6E2D
+    name: Side-Monitor
+    display: Built-in Retina Display
+    shortcut: cmd+ctrl+opt+shift+a
+    assignAppShortcut: cmd+opt+shift+a
+    apps:
+    - name: Google Chrome
+      bundleIdentifier: com.google.Chrome
+      iconPath: /Applications/Google Chrome.app/Contents/Resources/app.icns
+  - id: F6FCB988-63A3-462C-BBA3-A23FDB3D6EC6
+    name: Browser
+    display: U28E590
+    shortcut: cmd+ctrl+opt+shift+s
+    assignAppShortcut: cmd+opt+shift+s
+    apps:
+    - name: Safari
+      bundleIdentifier: com.apple.Safari
+      iconPath: /System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/Contents/Resources/AppIcon.icns
+    - name: Google Chrome
+      bundleIdentifier: com.google.Chrome
+      iconPath: /Applications/Google Chrome.app/Contents/Resources/app.icns
+    - name: Orion
+      bundleIdentifier: com.kagi.kagimacOS
+      iconPath: /Applications/Orion.app/Contents/Resources/AppIcon.icns
+  - id: BCB67D72-4467-4CDC-80CA-1E7ABD31A4FA
+    name: Development
+    display: U28E590
+    shortcut: cmd+ctrl+opt+shift+d
+    assignAppShortcut: cmd+opt+shift+d
+    apps:
+    - name: Ghostty
+      bundleIdentifier: com.mitchellh.ghostty
+      iconPath: /Applications/Ghostty.app/Contents/Resources/AppIcon.icns
+    - name: Cursor
+      bundleIdentifier: com.todesktop.230313mzl4w4u92
+      iconPath: /Applications/Cursor.app/Contents/Resources/icon.icns
+    - name: Zed
+      bundleIdentifier: dev.zed.Zed
+      iconPath: /Applications/Zed.app/Contents/Resources/Zed.icns
+    - name: Code
+      bundleIdentifier: com.microsoft.VSCode
+      iconPath: /Applications/Visual Studio Code.app/Contents/Resources/Code.icns
+    - name: Google Chrome
+      bundleIdentifier: com.google.Chrome
+      iconPath: /Applications/Google Chrome.app/Contents/Resources/app.icns
+  - id: 513673CF-0D6F-48A2-B0F2-69AD333505BD
+    name: Non-Focus
+    display: U28E590
+    shortcut: cmd+ctrl+opt+shift+f
+    assignAppShortcut: cmd+opt+shift+f
+    apps:
+    - name: Mail
+      bundleIdentifier: com.apple.mail
+      iconPath: /System/Applications/Mail.app/Contents/Resources/ApplicationIcon.icns
+    - name: Calendar
+      bundleIdentifier: com.apple.iCal
+      iconPath: /System/Applications/Calendar.app/Contents/Resources/AppIcon.icns
+    - name: Spotify
+      bundleIdentifier: com.apple.Safari.WebApp.4C02EB23-2142-4911-B845-044AC586EDF6
+      iconPath: /Users/yushi/Applications/Spotify.app/Contents/Resources/ApplicationIcon.icns

@@ -59,6 +59,7 @@ alias cat="bat --theme=$(defaults read -globalDomain AppleInterfaceStyle &> /dev
 # Safety aliases
 alias rm='echo "use trash-put"; false'
 alias aider="aider --architect --model openrouter/deepseek/deepseek-r1 --editor-model openrouter/deepseek/deepseek-chat"
+alias owu="DATA_DIR=~/.open-webui uvx --python 3.11 open-webui@latest serve"
 #
 # Custom Functions
 #
