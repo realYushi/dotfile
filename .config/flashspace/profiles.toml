@@ -25,19 +25,9 @@ shortcut = 'cmd+ctrl+opt+shift+s'
 symbolIconName = 'globe'
 
 [[profiles.workspaces.apps]]
-bundleIdentifier = 'com.apple.Safari'
-iconPath = '/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/Contents/Resources/AppIcon.icns'
-name = 'Safari'
-
-[[profiles.workspaces.apps]]
 bundleIdentifier = 'com.google.Chrome'
 iconPath = '/Applications/Google Chrome.app/Contents/Resources/app.icns'
 name = 'Google Chrome'
-
-[[profiles.workspaces.apps]]
-bundleIdentifier = 'com.kagi.kagimacOS'
-iconPath = '/Applications/Orion.app/Contents/Resources/AppIcon.icns'
-name = 'Orion'
 
 [[profiles.workspaces]]
 assignAppShortcut = 'cmd+opt+shift+d'
@@ -68,9 +58,9 @@ iconPath = '/Applications/Visual Studio Code.app/Contents/Resources/Code.icns'
 name = 'Code'
 
 [[profiles.workspaces.apps]]
-bundleIdentifier = 'com.google.Chrome'
-iconPath = '/Applications/Google Chrome.app/Contents/Resources/app.icns'
-name = 'Google Chrome'
+bundleIdentifier = 'com.culturedcode.ThingsMac'
+iconPath = '/Applications/Things3.app/Contents/Resources/App-Release.icns'
+name = 'Things'
 
 [[profiles.workspaces]]
 assignAppShortcut = 'cmd+opt+shift+f'
@@ -88,8 +78,3 @@ name = 'Mail'
 bundleIdentifier = 'com.apple.iCal'
 iconPath = '/System/Applications/Calendar.app/Contents/Resources/AppIcon.icns'
 name = 'Calendar'
-
-[[profiles.workspaces.apps]]
-bundleIdentifier = 'com.apple.Safari.WebApp.4C02EB23-2142-4911-B845-044AC586EDF6'
-iconPath = '/Users/yushi/Applications/Spotify.app/Contents/Resources/ApplicationIcon.icns'
-name = 'Spotify'

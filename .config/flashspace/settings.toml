@@ -7,13 +7,8 @@ enableIntegrations = false
 enablePictureInPictureSupport = true
 enableSpaceControl = true
 enableSpaceControlAnimations = false
-floatTheFocusedApp = 'cmd+ctrl+opt+shift+t'
 focusDown = 'cmd+ctrl+opt+shift+j'
 focusLeft = 'cmd+ctrl+opt+shift+h'
-focusNextWorkspaceApp = 'cmd+ctrl+opt+shift+up'
-focusNextWorkspaceWindow = 'cmd+ctrl+opt+shift+left'
-focusPreviousWorkspaceApp = 'cmd+ctrl+opt+shift+down'
-focusPreviousWorkspaceWindow = 'cmd+ctrl+opt+shift+right'
 focusRight = 'cmd+ctrl+opt+shift+l'
 focusUp = 'cmd+ctrl+opt+shift+k'
 menuBarDisplayAliases = ''
@@ -25,10 +20,16 @@ showFloatingNotifications = true
 showMenuBarTitle = false
 showSpaceControl = 'cmd+ctrl+opt+shift+g'
 spaceControlCurrentDisplayWorkspaces = false
+spaceControlMaxColumns = 6
 switchToRecentWorkspace = 'cmd+ctrl+opt+shift+tab'
-unfloatTheFocusedApp = 'cmd+ctrl+opt+shift+r'
+toggleTheFocusedAppFloating = 'cmd+ctrl+opt+shift+t'
 
 [[floatingApps]]
-bundleIdentifier = 'com.thefocusproject.app'
-iconPath = '/Applications/The Focus Project.app/Contents/Resources/icon.icns'
-name = 'The Focus Project'
+bundleIdentifier = 'md.obsidian'
+iconPath = '/Applications/Obsidian.app/Contents/Resources/icon.icns'
+name = 'Obsidian'
+
+[[floatingApps]]
+bundleIdentifier = 'com.electron.min'
+iconPath = '/Applications/Min.app/Contents/Resources/icon.icns'
+name = 'Min'
