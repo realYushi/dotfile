@@ -58,8 +58,6 @@ alias ls='eza -alh --icons --group-directories-first'
 alias cat="bat --theme=$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
 # Safety aliases
 alias rm='echo "use trash-put"; false'
-alias aider="aider --architect --model openrouter/deepseek/deepseek-r1 --editor-model openrouter/deepseek/deepseek-chat"
-alias owu="docker run -d -p 3000:8080 -e WEBUI_AUTH=False -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main"
 #
 # Custom Functions
 #
@@ -88,10 +86,7 @@ source <(fzf --zsh)
 eval "$(pay-respects zsh --alias)"
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(/opt/homebrew/bin/mise activate zsh)"
-export PATH="$HOME/.local/bin:$PATH"
-export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins/"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# bun completions
-[ -s "/Users/yushi/.bun/_bun" ] && source "/Users/yushi/.bun/_bun"
