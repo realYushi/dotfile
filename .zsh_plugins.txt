@@ -1,8 +1,9 @@
 mattmc3/ez-compinit
+zsh-users/zsh-completions
 jeffreytse/zsh-vi-mode
 Aloxaf/fzf-tab
 MichaelAquilina/zsh-you-should-use
 romkatv/powerlevel10k
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
-zsh-users/zsh-syntax-highlighting
+zdharma-continuum/fast-syntax-highlighting
